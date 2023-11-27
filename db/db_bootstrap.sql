@@ -81,7 +81,9 @@ CREATE TABLE IF NOT EXISTS Message (
 CREATE TABLE IF NOT EXISTS UserGroup (
   GroupID int NOT NULL AUTO_INCREMENT,
   GroupName varchar(255),
-  PRIMARY KEY (GroupID)
+  CreatorID int NOT NULL,
+  PRIMARY KEY (GroupID),
+  FOREIGN KEY (CreatorID) REFERENCES User(UserID)
 );
 
 -- GroupsAndUsers table
@@ -115,7 +117,6 @@ CREATE TABLE IF NOT EXISTS Calendar (
   FOREIGN KEY (UserID) REFERENCES User(UserID)
     ON DELETE CASCADE
 );
-
 -- Task table
 CREATE TABLE IF NOT EXISTS Task (
   TaskID int NOT NULL AUTO_INCREMENT,
@@ -245,11 +246,11 @@ VALUES
 
 -- UserGroup sample data
 INSERT INTO UserGroup
-  (GroupName)
+  (GroupName, CreatorID)
 VALUES
-  ('Group 1'),
-  ('Group 2'),
-  ('Group 3');
+  ('Group 1', 1),
+  ('Group 2', 1),
+  ('Group 3', 2);
 
 -- GroupsAndUsers sample data
 INSERT INTO GroupsAndUsers
