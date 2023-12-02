@@ -72,7 +72,8 @@ services:
 #       - ./stacks:/appsmith-stacks
 #     restart: unless-stopped
 
-secrets: secret_db_pw:
+secrets:
+  secret_db_pw:
     file: ./secrets/db_password.txt
   secret_db_root_pw:
     file: ./secrets/db_root_password.txt
