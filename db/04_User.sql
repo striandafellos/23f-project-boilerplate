@@ -1,3 +1,5 @@
+use taskwiz;
+
 insert into User (UserID, Username) values (1, 'obearne0');
 insert into User (UserID, Username) values (2, 'saspling1');
 insert into User (UserID, Username) values (3, 'apilger2');

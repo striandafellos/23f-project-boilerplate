@@ -1,0 +1,1 @@
+# TODO: user who makes a group should automatically be placed into it

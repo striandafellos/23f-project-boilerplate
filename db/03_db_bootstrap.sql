@@ -195,6 +195,9 @@ CREATE TABLE IF NOT EXISTS BudgetItem (
 );
 
 
+/*
+
+
 -- Add sample data. 
 
 -- User sample data
@@ -335,3 +338,7 @@ VALUES
   ('Item 1', 'Description for item 1', 25.99, 1),
   ('Item 2', 'Uh oh this one is negative it better not break the system', -47.88, 2),
   (NULL, NULL, 100.00, 1);
+
+
+
+*/
