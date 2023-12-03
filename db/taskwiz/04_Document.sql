@@ -1,3 +1,5 @@
+use taskwiz;
+
 insert into Document (DocumentID, DocumentName, Content, UserID, FolderID) values (1, 'donec ut dolor morbi vel', 'arcu libero rutrum ac lobortis vel dapibus at diam nam tristique', 38, 33);
 insert into Document (DocumentID, DocumentName, Content, UserID, FolderID) values (2, 'ut at dolor', 'rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa', 1, 55);
 insert into Document (DocumentID, DocumentName, Content, UserID, FolderID) values (3, 'turpis adipiscing lorem vitae mattis', 'non mi integer ac neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea', 30, 17);

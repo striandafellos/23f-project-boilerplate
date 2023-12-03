@@ -1,3 +1,5 @@
+use taskwiz;
+
 insert into UserGroup (GroupID, GroupName, CreatorID) values (1, 'montes nascetur ridiculus', 4);
 insert into UserGroup (GroupID, GroupName, CreatorID) values (2, 'donec pharetra magna', 2);
 insert into UserGroup (GroupID, GroupName, CreatorID) values (3, 'quam sapien', 28);

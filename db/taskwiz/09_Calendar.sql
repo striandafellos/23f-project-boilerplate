@@ -1,3 +1,5 @@
+use taskwiz;
+
 insert into Calendar (CalendarID, CalendarName, UserID) values (1, 'velit nec', 32);
 insert into Calendar (CalendarID, CalendarName, UserID) values (2, 'sem duis aliquam', 5);
 insert into Calendar (CalendarID, CalendarName, UserID) values (3, 'in libero ut', 21);

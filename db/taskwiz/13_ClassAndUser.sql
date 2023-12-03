@@ -1,3 +1,5 @@
+use taskwiz;
+
 insert into ClassAndUser (ClassID, UserID) values (44, 29);
 insert into ClassAndUser (ClassID, UserID) values (6, 6);
 insert into ClassAndUser (ClassID, UserID) values (1, 38);
@@ -21,7 +23,6 @@ insert into ClassAndUser (ClassID, UserID) values (63, 15);
 insert into ClassAndUser (ClassID, UserID) values (55, 18);
 insert into ClassAndUser (ClassID, UserID) values (49, 37);
 insert into ClassAndUser (ClassID, UserID) values (23, 16);
-insert into ClassAndUser (ClassID, UserID) values (26, 4);
 insert into ClassAndUser (ClassID, UserID) values (16, 18);
 insert into ClassAndUser (ClassID, UserID) values (61, 9);
 insert into ClassAndUser (ClassID, UserID) values (64, 32);
@@ -99,10 +100,8 @@ insert into ClassAndUser (ClassID, UserID) values (13, 5);
 insert into ClassAndUser (ClassID, UserID) values (68, 31);
 insert into ClassAndUser (ClassID, UserID) values (30, 3);
 insert into ClassAndUser (ClassID, UserID) values (43, 40);
-insert into ClassAndUser (ClassID, UserID) values (11, 21);
 insert into ClassAndUser (ClassID, UserID) values (21, 27);
 insert into ClassAndUser (ClassID, UserID) values (54, 8);
-insert into ClassAndUser (ClassID, UserID) values (28, 33);
 insert into ClassAndUser (ClassID, UserID) values (29, 27);
 insert into ClassAndUser (ClassID, UserID) values (25, 8);
 insert into ClassAndUser (ClassID, UserID) values (6, 36);

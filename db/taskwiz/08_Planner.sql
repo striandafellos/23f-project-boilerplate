@@ -1,3 +1,5 @@
+use taskwiz;
+
 insert into Planner (PlannerID, PlannerName, UserID) values (1, 'placerat praesent blandit', 34);
 insert into Planner (PlannerID, PlannerName, UserID) values (2, 'elementum nullam', 34);
 insert into Planner (PlannerID, PlannerName, UserID) values (3, 'nec condimentum neque', 19);

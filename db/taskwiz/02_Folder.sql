@@ -1,3 +1,5 @@
+use taskwiz;
+
 insert into Folder (FolderID, UserID, FolderName) values (1, 1, 'eros elementum');
 insert into Folder (FolderID, UserID, FolderName) values (2, 22, 'amet sapien dignissim');
 insert into Folder (FolderID, UserID, FolderName) values (3, 39, 'mauris non');

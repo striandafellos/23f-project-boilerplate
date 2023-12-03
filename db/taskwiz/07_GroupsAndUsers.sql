@@ -1,8 +1,9 @@
+use taskwiz;
+
 insert into GroupsAndUsers (GroupID, UserID) values (5, 26);
 insert into GroupsAndUsers (GroupID, UserID) values (7, 40);
 insert into GroupsAndUsers (GroupID, UserID) values (8, 30);
 insert into GroupsAndUsers (GroupID, UserID) values (14, 9);
-insert into GroupsAndUsers (GroupID, UserID) values (17, 12);
 insert into GroupsAndUsers (GroupID, UserID) values (19, 23);
 insert into GroupsAndUsers (GroupID, UserID) values (8, 14);
 insert into GroupsAndUsers (GroupID, UserID) values (7, 28);
@@ -24,7 +25,6 @@ insert into GroupsAndUsers (GroupID, UserID) values (3, 12);
 insert into GroupsAndUsers (GroupID, UserID) values (13, 25);
 insert into GroupsAndUsers (GroupID, UserID) values (18, 37);
 insert into GroupsAndUsers (GroupID, UserID) values (9, 20);
-insert into GroupsAndUsers (GroupID, UserID) values (5, 18);
 insert into GroupsAndUsers (GroupID, UserID) values (5, 18);
 insert into GroupsAndUsers (GroupID, UserID) values (8, 38);
 insert into GroupsAndUsers (GroupID, UserID) values (13, 40);

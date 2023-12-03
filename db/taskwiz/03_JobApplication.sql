@@ -1,3 +1,5 @@
+use taskwiz;
+
 insert into JobApplication (ApplicationID, JobTitle, CompanyName, Content, UserID, FolderID) values (1, 'Junior Executive', 'Flipopia', 'eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus in felis eu sapien cursus vestibulum proin eu mi nulla ac enim in', 29, 23);
 insert into JobApplication (ApplicationID, JobTitle, CompanyName, Content, UserID, FolderID) values (2, 'Financial Analyst', 'Meezzy', 'nullam varius nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget', 26, 19);
 insert into JobApplication (ApplicationID, JobTitle, CompanyName, Content, UserID, FolderID) values (3, 'Civil Engineer', 'Tagchat', 'justo in blandit ultrices enim lorem ipsum dolor sit amet consectetuer adipiscing elit proin interdum mauris non ligula pellentesque ultrices phasellus id', 38, 54);

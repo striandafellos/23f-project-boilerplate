@@ -1,3 +1,5 @@
+use taskwiz;
+
 insert into Message (MessageID, SenderID, RecipientID, MessageBody, DateSent) values (1, 27, 5, 'pulvinar nulla', '2023-04-30 09:11:06');
 insert into Message (MessageID, SenderID, RecipientID, MessageBody, DateSent) values (2, 31, 10, 'eleifend luctus ultricies eu nibh quisque id', '2023-10-02 14:43:32');
 insert into Message (MessageID, SenderID, RecipientID, MessageBody, DateSent) values (3, 33, 27, 'magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus etiam vel augue vestibulum rutrum', '2022-12-02 18:47:27');

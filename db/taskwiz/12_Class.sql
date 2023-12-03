@@ -1,3 +1,5 @@
+use taskwiz;
+
 insert into Class (ClassID, Title) values (1, 'cubilia curae nulla');
 insert into Class (ClassID, Title) values (2, 'commodo placerat praesent blandit nam nulla integer pede');
 insert into Class (ClassID, Title) values (3, 'in magna bibendum imperdiet');
