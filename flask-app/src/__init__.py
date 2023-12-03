@@ -37,18 +37,17 @@ def create_app():
     def test():
         return "<h1>Test</h1>"
 
-    # Import the various Beluprint Objects
-    from src.customers.customers import customers
-    from src.products.products  import products
-    
+    # Import the various Blueprint Objects    
+    from src.tasks.tasks import tasks
     from src.folders.folders import folders
+    from src.job_applications.job_applications import job_apps
 
 
     # Register the routes from each Blueprint with the app object
     # and give a url prefix to each
-    app.register_blueprint(customers,   url_prefix='/c')
-    app.register_blueprint(products,    url_prefix='/p')
+    app.register_blueprint(tasks,       url_prefix='/t')
     app.register_blueprint(folders,     url_prefix='/f')
+    app.register_blueprint(job_apps,    url_prefix='/j')
 
     # Don't forget to return the app object
     return app

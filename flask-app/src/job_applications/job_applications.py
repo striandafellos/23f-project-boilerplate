@@ -2,14 +2,14 @@ from flask import Blueprint, request, jsonify, make_response
 from src import db
 
 
-folders = Blueprint('folders', __name__)
+job_apps = Blueprint('job_apps', __name__)
 
-# Get all folders from the DB or create a new folder and add it to the DB
-@folders.route('/folders', methods=['GET', 'POST'])
-def request_folders():
+# Get all job applications from the DB or create a new job application and add it to the DB
+@job_apps.route('/job_apps', methods=['GET', 'POST'])
+def request_job_apps():
     if request.method == 'GET':
         cursor = db.get_db().cursor()
-        query = 'select * from Folder'
+        query = 'select * from JobApplication'
         cursor.execute(query)
         row_headers = [x[0] for x in cursor.description]
         json_data = []
@@ -22,20 +22,23 @@ def request_folders():
         return the_response
     elif request.method == 'POST':
         the_data = request.json
-        folder_name = the_data['FolderName']
-        creator_id = the_data['UserID']
-        query = 'insert into Folder (FolderName, UserID) values ("{0}", {1})'.format(folder_name, creator_id)
+        title = the_data['JobTitle']
+        company = the_data['CompanyName']
+        content = the_data['Content']
+        userID = the_data['UserID']
+        folderID = the_data['FolderID']
+        query = 'insert into JopApplication (JobTitle, CompanyName, Content, UserID, FolderID) values ("{0}", "{1}", "{2}", {3}, {4})'.format(title, company, content, userID, folderID)
         cursor = db.get_db().cursor()
         cursor.execute(query)
         db.get_db().commit()
         return "Success"
 
-# Get folder details for a specific folder, update a folder, or delete a folder
-@folders.route('/folders/<folderID>', methods=['GET', 'PUT', 'DELETE'])
-def request_folder(folderID):
+# Get details regarding a specific job application, update an application, or delete an application
+@job_apps.route('/job_apps/<appID>', methods=['GET', 'PUT', 'DELETE'])
+def request_job_app(appID):
     if request.method == 'GET':
         cursor = db.get_db().cursor()
-        query = 'select * from Folder where FolderID = {0}'.format(folderID)
+        query = 'select * from JobApplication where ApplicationID = {0}'.format(appID)
         cursor.execute(query)
         row_headers = [x[0] for x in cursor.description]
         json_data = []
@@ -48,15 +51,18 @@ def request_folder(folderID):
         return the_response
     elif request.method == 'PUT':
         the_data = request.json
-        folder_name = the_data['FolderName']
-        creator_id = the_data['UserID']
-        query = 'update Folder set FolderName = "{0}", UserID = {1} where FolderID = {2}'.format(folder_name, creator_id, folderID)
+        title = the_data['JobTitle']
+        company = the_data['CompanyName']
+        content = the_data['Content']
+        userID = the_data['UserID']
+        folderID = the_data['FolderID']
+        query = 'update JopApplication set JobTitle = "{0}", CompanyName = "{1}", Content = "{2}", UserID = {3}, FolderID = {4} where ApplicationID = {5}'.format(title, company, content, userID, folderID, appID)
         cursor = db.get_db().cursor()
         cursor.execute(query)
         db.get_db().commit()
         return "Success"
     elif request.method == 'DELETE':
-        query = 'delete from Folder where FolderID = {0}'.format(folderID)
+        query = 'delete from JobApplication where ApplicationID = {0}'.format(appID)
         cursor = db.get_db().cursor()
         cursor.execute(query)
         db.get_db().commit()
