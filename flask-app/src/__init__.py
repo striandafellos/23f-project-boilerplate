@@ -41,13 +41,18 @@ def create_app():
     from src.tasks.tasks import tasks
     from src.folders.folders import folders
     from src.job_applications.job_applications import job_apps
-
+    from src.documents.documents import documents
+    from src.messages.messages import messages
+    from src.groups.groups import groups
 
     # Register the routes from each Blueprint with the app object
     # and give a url prefix to each
     app.register_blueprint(tasks,       url_prefix='/t')
     app.register_blueprint(folders,     url_prefix='/f')
     app.register_blueprint(job_apps,    url_prefix='/j')
+    app.register_blueprint(documents,   url_prefix='/d')
+    app.register_blueprint(messages,    url_prefix='/m')
+    app.register_blueprint(groups,      url_prefix='/g')
 
     # Don't forget to return the app object
     return app
