@@ -47,7 +47,7 @@ def request_groups():
 
 # Get group details for a specific group, update a group, or delete a group
 @groups.route('/groups/<groupID>', methods=['GET', 'PUT', 'DELETE'])
-def request_folder(groupID):
+def request_group(groupID):
     if request.method == 'GET':
         cursor = db.get_db().cursor()
         query = 'select * from UserGroup where GroupID = {0}'.format(groupID)
