@@ -46,6 +46,8 @@ def create_app():
     from src.groups.groups import groups
     from src.planners.planners import planners
     from src.calendars.calendars import calendars
+    from src.events.events import events
+    from src.classes.classes import classes
 
     # Register the routes from each Blueprint with the app object
     # and give a url prefix to each
@@ -56,7 +58,9 @@ def create_app():
     app.register_blueprint(messages,    url_prefix='/m')
     app.register_blueprint(groups,      url_prefix='/g')
     app.register_blueprint(planners,    url_prefix='/p')
-    app.register_blueprint(calendars,   url_prefix='/c')
+    app.register_blueprint(calendars,   url_prefix='/cal')
+    app.register_blueprint(events,      url_prefix='/e')
+    app.register_blueprint(classes,     url_prefix='/cls')
 
     # Don't forget to return the app object
     return app
