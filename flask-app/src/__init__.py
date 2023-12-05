@@ -48,6 +48,7 @@ def create_app():
     from src.calendars.calendars import calendars
     from src.events.events import events
     from src.classes.classes import classes
+    from src.budget_trackers.budget_trackers import budget_trackers
 
     # Register the routes from each Blueprint with the app object
     # and give a url prefix to each
@@ -61,6 +62,7 @@ def create_app():
     app.register_blueprint(calendars,   url_prefix='/cal')
     app.register_blueprint(events,      url_prefix='/e')
     app.register_blueprint(classes,     url_prefix='/cls')
+    app.register_blueprint(budget_trackers, url_prefix='/b')
 
     # Don't forget to return the app object
     return app

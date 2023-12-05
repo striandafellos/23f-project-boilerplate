@@ -2,11 +2,11 @@ from flask import Blueprint, request, jsonify, make_response
 from src import db
 
 
-budget_tracker = Blueprint('budget_tracker', __name__)
+budget_trackers = Blueprint('budget_trackers', __name__)
 
-# Get all folders from the DB or create a new folder and add it to the DB
-@budget_tracker.route('/budget_tracker', methods=['GET', 'POST'])
-def request_budget_tracker():
+# Get all budget trackers from the DB or create a new budget tracker and add it to the DB
+@budget_trackers.route('/budget_trackers', methods=['GET', 'POST'])
+def request_budget_trackers():
     if request.method == 'GET':
         cursor = db.get_db().cursor()
         query = 'select * from BudgetTracker'
@@ -22,20 +22,20 @@ def request_budget_tracker():
         return the_response
     elif request.method == 'POST':
         the_data = request.json
-        title = the_data['Title']
+        name = the_data['BudgetTrackerName']
         creator_id = the_data['UserID']
-        query = 'insert into BudgetTracker (Title, UserID) values ("{0}", {1})'.format(title, creator_id)
+        query = 'insert into BudgetTracker (BudgetTrackerName, UserID) values ("{0}", {1})'.format(name, creator_id)
         cursor = db.get_db().cursor()
         cursor.execute(query)
         db.get_db().commit()
         return "Success"
     
-# Get folder details for a specific folder, update a folder, or delete a folder
-@budget_tracker.route('/budget_tracker/<budgetID>', methods=['GET', 'PUT', 'DELETE'])
-def request_folder(budgetID):
+# Get budget tracker details for a specific tracker, update a tracker, or delete a tracker
+@budget_trackers.route('/budget_trackers/<budgetID>', methods=['GET', 'PUT', 'DELETE'])
+def request_budget_tracker(budgetID):
     if request.method == 'GET':
         cursor = db.get_db().cursor()
-        query = 'select * from BudgetTracker where budgetID = {0}'.format(budgetID)
+        query = 'select * from BudgetTracker where BudgetTrackerID = {0}'.format(budgetID)
         cursor.execute(query)
         row_headers = [x[0] for x in cursor.description]
         json_data = []
@@ -48,15 +48,15 @@ def request_folder(budgetID):
         return the_response
     elif request.method == 'PUT':
         the_data = request.json
-        title = the_data['Title']
+        name = the_data['BudgetTrackerName']
         creator_id = the_data['UserID']
-        query = 'update BudgetTracker set Title = "{0}", UserID = {1} where BudgetID = {2}'.format(title, creator_id, budgetID)
+        query = 'update BudgetTracker set BudgetTrackerName = "{0}", UserID = {1} where BudgetTrackerID = {2}'.format(name, creator_id, budgetID)
         cursor = db.get_db().cursor()
         cursor.execute(query)
         db.get_db().commit()
         return "Success"
     elif request.method == 'DELETE':
-        query = 'delete from BudgetTracker where budgetID = {0}'.format(budgetID)
+        query = 'delete from BudgetTracker where BudgetTrackerID = {0}'.format(budgetID)
         cursor = db.get_db().cursor()
         cursor.execute(query)
         db.get_db().commit()
