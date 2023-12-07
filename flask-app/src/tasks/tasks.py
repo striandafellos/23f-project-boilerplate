@@ -71,3 +71,37 @@ def request_task(taskID):
         cursor.execute(query)
         db.get_db().commit()
         return "Success"
+
+# Query all tasks by title
+@tasks.route('/tasks/title/<title>', methods=['GET'])
+def request_tasks_by_title(title):
+    if request.method == 'GET':
+        cursor = db.get_db().cursor()
+        query = 'select * from Task where Title like {0}'.format(title)
+        cursor.execute(query)
+        row_headers = [x[0] for x in cursor.description]
+        json_data = []
+        theData = cursor.fetchall()
+        for row in theData:
+            json_data.append(dict(zip(row_headers, row)))
+        the_response = make_response(jsonify(json_data))
+        the_response.status_code = 200
+        the_response.mimetype = 'application/json'
+        return the_response
+
+# Get all tasks created by a specific user
+@tasks.route('/tasks/uid/<uid>', methods=['GET'])
+def request_tasks_by_user(uid):
+    if request.method == 'GET':
+        cursor = db.get_db().cursor()
+        query = 'select * from Task where UserID = {0}'.format(uid)
+        cursor.execute(query)
+        row_headers = [x[0] for x in cursor.description]
+        json_data = []
+        theData = cursor.fetchall()
+        for row in theData:
+            json_data.append(dict(zip(row_headers, row)))
+        the_response = make_response(jsonify(json_data))
+        the_response.status_code = 200
+        the_response.mimetype = 'application/json'
+        return the_response
