@@ -71,8 +71,8 @@ def request_event(eventID):
         return "Success"
 
 # Query all events by title
-@events.route('/events/name/<title>', methods=['GET'])
-def request_event_by_title(title):
+@events.route('/events/title/<title>', methods=['GET'])
+def request_events_by_title(title):
     if request.method == 'GET':
         cursor = db.get_db().cursor()
         query = 'select * from Event where Title like {0}'.format(title)

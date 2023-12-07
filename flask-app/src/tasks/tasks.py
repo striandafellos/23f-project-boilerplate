@@ -74,7 +74,7 @@ def request_task(taskID):
 
 # Query all tasks by title
 @tasks.route('/tasks/title/<title>', methods=['GET'])
-def request_task_by_title(title):
+def request_tasks_by_title(title):
     if request.method == 'GET':
         cursor = db.get_db().cursor()
         query = 'select * from Task where Title like {0}'.format(title)
