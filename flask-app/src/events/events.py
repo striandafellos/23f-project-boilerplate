@@ -69,3 +69,37 @@ def request_event(eventID):
         cursor.execute(query)
         db.get_db().commit()
         return "Success"
+
+# Query all events by title
+@events.route('/events/name/<title>', methods=['GET'])
+def request_event_by_title(title):
+    if request.method == 'GET':
+        cursor = db.get_db().cursor()
+        query = 'select * from Event where Title like {0}'.format(title)
+        cursor.execute(query)
+        row_headers = [x[0] for x in cursor.description]
+        json_data = []
+        theData = cursor.fetchall()
+        for row in theData:
+            json_data.append(dict(zip(row_headers, row)))
+        the_response = make_response(jsonify(json_data))
+        the_response.status_code = 200
+        the_response.mimetype = 'application/json'
+        return the_response
+
+# Get all events created by a specific user
+@events.route('/events/uid/<uid>', methods=['GET'])
+def request_events_by_user(uid):
+    if request.method == 'GET':
+        cursor = db.get_db().cursor()
+        query = 'select * from Event where UserID = {0}'.format(uid)
+        cursor.execute(query)
+        row_headers = [x[0] for x in cursor.description]
+        json_data = []
+        theData = cursor.fetchall()
+        for row in theData:
+            json_data.append(dict(zip(row_headers, row)))
+        the_response = make_response(jsonify(json_data))
+        the_response.status_code = 200
+        the_response.mimetype = 'application/json'
+        return the_response
